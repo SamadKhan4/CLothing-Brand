@@ -1,5 +1,5 @@
-const assets = import.meta.glob('./Products/*.png', { eager: true, query: '?url', import: 'default' });
-const image = name => assets[`./Products/${name}.png`];
+const assets = import.meta.glob('./optimized/*.webp', { eager: true, query: '?url', import: 'default' });
+const image = name => assets[`./optimized/${name}.webp`];
 export const instagram = 'https://www.instagram.com/tasmiya_trends/';
 export const whatsapp = (name = '') => `https://wa.me/917066289827?text=${encodeURIComponent(name ? `Hi Tasmiya Trends, I'd like to know the price, available sizes and availability of ${name}.` : 'Hi Tasmiya Trends, I would like to enquire about your collection.')}`;
 const catalog = [
