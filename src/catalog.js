@@ -12,8 +12,8 @@ const catalog = [
  ['Silver Mist Premium Kaftan Abaya','Kaftans','#a4a3a5','Silver','A silver-toned kaftan abaya with an elegant drape. Enquire for price, fabric details, measurements and availability.'],
  ['Zoya Floral Embroidered Pakistani Suit Collection','Pakistani Suits','#8d3446','Collection colours','A floral embroidered Pakistani suit collection in rich, expressive shades. Message us to confirm the available colour, size and price before ordering.'],
 ];
-export const products = catalog.map(([name,category,color,colorName,description]) => ({ id:name.toLowerCase().replaceAll(/[^a-z0-9]+/g,'-'), name,category,price:null,tag:'NEW',image:image(name),alt:image(name),colors:[color],colorName,description }));
-export const images = { hero:products[1].image, story:products[7].image, banner:products[4].image };
+export const products = catalog.map(([name,category,color,colorName,description], i) => ({ id:name.toLowerCase().replaceAll(/[^a-z0-9]+/g,'-'), name,category,price:null,tag:[1,3,4,6].includes(i)?'NEW':undefined,trending:[0,2,5,7].includes(i),image:image(name),alt:image(name),colors:[color],colorName,description }));
+export const images = { hero:products[5].image, story:products[7].image, banner:products[4].image };
 export const categories = ['Pakistani Suits','Abayas','Kaftans'];
 export const categoryImages = [products[0].image,products[1].image,products[6].image];
 export const money = n => n == null ? 'Price on request' : '₹'+n.toLocaleString('en-IN');
